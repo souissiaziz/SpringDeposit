@@ -2,6 +2,7 @@ package com.esprit.spring.etude_de_cas_spring.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 
 @Entity
@@ -18,5 +19,8 @@ public class Cours implements Serializable {
     private Support support;
     private Float prix;
     private Integer creneau;
+
+    @OneToMany(mappedBy = "cours")
+    private Set<Inscription> inscriptions;
 
 }

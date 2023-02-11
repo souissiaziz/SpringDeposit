@@ -1,6 +1,7 @@
 package com.esprit.spring.etude_de_cas_spring.entities;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table( name = "Piste")
@@ -15,6 +16,9 @@ import java.io.Serializable;
         private Couleur couleur;
         private Integer longeur;
         private Integer pente;
+
+        @ManyToMany
+        private Set<Skieur> skieurs;
 
 // Constructeur et accesseurs (getters) et mutateurs (setters)
     }
